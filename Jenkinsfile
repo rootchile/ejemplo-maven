@@ -1,30 +1,51 @@
+import groovy.json.JsonSlurperClassic
+
+def jsonParse(def json) {
+    new groovy.json.JsonSlurperClassic().parseText(json)
+}
 pipeline {
-    agent { docker { image 'maven' } }
+    agent any
     stages {
-        stage('Compile') {
+
+        stage("paso 1"){
             steps {
-                sh 'mvn clean compile -e'
+                script {
+                sh "echo 'Hello, World Usach 2021!'"
+                }
             }
         }
-         stage('Test') {
+        stage("paso 2"){
             steps {
-                sh 'mvn clean test -e'
+                script {
+                sh "echo 'Compile Code!'"
+                }
             }
         }
-        stage('Jar Code') {
+        stage("paso 3"){
             steps {
-                sh 'mvn clean package -e'
+                script {
+                sh "echo 'Test Code!'"
+                }
             }
         }
-        stage('Run') {
+        stage("paso 4"){
             steps {
-                sh 'mvn spring-boot:run'
+                script {
+                sh "echo 'Build .Jar!'"
+                }
             }
         }
-        stage('Testing') {
-            steps {
-                sh 'curl -X GET http://localhost:8081/rest/mscovid/test?msg=testing'
-            }
+    }
+    post {
+        always {
+            sh "echo 'fase always executed post'"
+        }
+        success {
+            sh "echo 'fase success'"
+        }
+
+        failure {
+            sh "echo 'fase failure'"
         }
     }
 }
