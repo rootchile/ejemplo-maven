@@ -6,8 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DevOpsUsach2020Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DevOpsUsach2020Application.class, args);
+	@Test void contextLoads0() {
+		String correcto = "hi";
+		Assertions.assertThan(correcto).isEqualTo("hi");
+	}
+
+	@Test void contextLoads1() {
+		String correcto = "hi";
+		Assertions.assertThan(correcto).isEqualTo("hi");
 	}
 
 }
