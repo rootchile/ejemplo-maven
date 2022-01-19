@@ -6,13 +6,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DevOpsUsach2020ApplicationTests {
 
-	@Test 
+	@Test
 	void contextLoads0() {
 		String correcto = "hi";
 		Assertions.assertThan(correcto).isEqualTo("hi");
 	}
 
-	@Test 
+	@Test
 	void contextLoads1() {
 		String correcto = "hi";
 		Assertions.assertThan(correcto).isEqualTo("hi");
