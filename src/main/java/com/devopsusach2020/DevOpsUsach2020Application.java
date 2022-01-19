@@ -6,13 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DevOpsUsach2020Application {
 
-	@Test 
+	@Test
 	void contextLoads0() {
 		String correcto = "hi";
 		Assertions.assertThan(correcto).isEqualTo("hi");
 	}
 
-	@Test 
+	@Test
 	void contextLoads1() {
 		String correcto = "hi";
 		Assertions.assertThan(correcto).isEqualTo("hi");
